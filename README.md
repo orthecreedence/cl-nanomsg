@@ -10,6 +10,7 @@ Until I write docs (which I never do for my binding libs), read bindings.lisp or
 use the following patterns for general usage:
 
 ```lisp
+;; send a message via a new sock, and perform cleanup after done
 (let* ((sock (nn:socket nn:+af-sp+ nn:+nn-pair+))
        (conn (nn:connect sock "inproc://mysock"))
        (msg (babel:string-to-octets "send me.")))
@@ -19,6 +20,15 @@ use the following patterns for general usage:
     (nn:send sock buf (length msg))
     (nn:shutdown sock conn)
     (nn:close sock)))
+
+;; grab the underlying FD from a nanomsg sock (which can be used in an event
+;; loop like cl-async)
+(let ((sock (nn:socket nn:+af-sp+ nn:+nn-pair+)))
+  (cffi:with-foreign-objects ((pt :pointer)
+                              (size :int))
+    (setf (cffi:mem-aref size :int) (cffi:foreign-type-size :long))
+    (nn:getsockopt sock nn:+nn-sol-socket+ nn:+nn-rcvfd+ pt size)
+    (cffi:mem-aref pt :long)))
 ```
 
 ## License
