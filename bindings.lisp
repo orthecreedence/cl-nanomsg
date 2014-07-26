@@ -288,7 +288,7 @@
 
 (cl:defconstant #.(lispify "NN_PROTO_BUS" 'constant) 7)
 
-(cl:defconstant #.(lispify "NN_BUS" 'constant) (cl:* 7 (cl:+ 16 0)))
+(cl:defconstant #.(lispify "NN_BUS" 'constant) (cl:+ (cl:* 7 16) 0))
 
 (cl:defconstant #.(lispify "NN_INPROC" 'constant) -1)
 
@@ -296,19 +296,19 @@
 
 (cl:defconstant #.(lispify "NN_PROTO_PAIR" 'constant) 1)
 
-(cl:defconstant #.(lispify "NN_PAIR" 'constant) (cl:* 1 (cl:+ 16 0)))
+(cl:defconstant #.(lispify "NN_PAIR" 'constant) (cl:+ (cl:* 1 16) 0))
 
 (cl:defconstant #.(lispify "NN_PROTO_PIPELINE" 'constant) 5)
 
-(cl:defconstant #.(lispify "NN_PUSH" 'constant) (cl:* 5 (cl:+ 16 0)))
+(cl:defconstant #.(lispify "NN_PUSH" 'constant) (cl:+ (cl:* 5 16) 0))
 
-(cl:defconstant #.(lispify "NN_PULL" 'constant) (cl:* 5 (cl:+ 16 1)))
+(cl:defconstant #.(lispify "NN_PULL" 'constant) (cl:+ (cl:* 5 16) 1))
 
 (cl:defconstant #.(lispify "NN_PROTO_PUBSUB" 'constant) 2)
 
-(cl:defconstant #.(lispify "NN_PUB" 'constant) (cl:* 2 (cl:+ 16 0)))
+(cl:defconstant #.(lispify "NN_PUB" 'constant) (cl:+ (cl:* 2 16) 0))
 
-(cl:defconstant #.(lispify "NN_SUB" 'constant) (cl:* 2 (cl:+ 16 1)))
+(cl:defconstant #.(lispify "NN_SUB" 'constant) (cl:+ (cl:* 2 16) 1))
 
 (cl:defconstant #.(lispify "NN_SUB_SUBSCRIBE" 'constant) 1)
 
@@ -316,9 +316,9 @@
 
 (cl:defconstant #.(lispify "NN_PROTO_REQREP" 'constant) 3)
 
-(cl:defconstant #.(lispify "NN_REQ" 'constant) (cl:* 3 (cl:+ 16 0)))
+(cl:defconstant #.(lispify "NN_REQ" 'constant) (cl:+ (cl:* 3 16) 0))
 
-(cl:defconstant #.(lispify "NN_REP" 'constant) (cl:* 3 (cl:+ 16 1)))
+(cl:defconstant #.(lispify "NN_REP" 'constant) (cl:+ (cl:* 3 16) 1))
 
 (cl:defconstant #.(lispify "NN_REQ_RESEND_IVL" 'constant) 1)
 
@@ -342,9 +342,9 @@
 
 (cl:defconstant #.(lispify "NN_PROTO_SURVEY" 'constant) 6)
 
-(cl:defconstant #.(lispify "NN_SURVEYOR" 'constant) (cl:* 6 (cl:+ 16 0)))
+(cl:defconstant #.(lispify "NN_SURVEYOR" 'constant) (cl:+ (cl:* 6 16) 0))
 
-(cl:defconstant #.(lispify "NN_RESPONDENT" 'constant) (cl:* 6 (cl:+ 16 1)))
+(cl:defconstant #.(lispify "NN_RESPONDENT" 'constant) (cl:+ (cl:* 6 16) 1))
 
 (cl:defconstant #.(lispify "NN_SURVEYOR_DEADLINE" 'constant) 1)
 

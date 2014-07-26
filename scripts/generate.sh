@@ -7,6 +7,8 @@
 
 swig -cffi -module bindings -noswig-lisp -o bindings.lisp scripts/bindings.i 
 sed -i 's|(\([0-9]\+ [0-9]\+\))|\1|' bindings.lisp
+# fix poorly ordered math
+sed -i 's|(cl:\* \([0-9]\+\) (cl:+ \([0-9]\+\) \([0-9]\+\)))|(cl:+ (cl:* \1 \2) \3)|' bindings.lisp
 
 # ------------------------------------------------------------------------------
 # make our exports 
